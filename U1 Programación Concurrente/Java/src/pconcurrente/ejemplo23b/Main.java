@@ -1,4 +1,4 @@
-package u2.ejemplo23b;
+package pconcurrente.ejemplo23b;
 
 import com.sun.org.apache.xpath.internal.objects.XObject;
 

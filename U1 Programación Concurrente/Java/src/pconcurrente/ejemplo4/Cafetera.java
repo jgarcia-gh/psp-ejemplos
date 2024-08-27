@@ -1,4 +1,4 @@
-package u2.ejemplo4;
+package pconcurrente.ejemplo4;
 
 public class Cafetera implements Runnable {
     @Override

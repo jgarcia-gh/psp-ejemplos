@@ -1,4 +1,4 @@
-package u2.ejemplo21;
+package pconcurrente.ejemplo21;
 
 public class HiloIngreso implements Runnable {
 

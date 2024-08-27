@@ -1,4 +1,4 @@
-package u2.ejemplo22;
+package pconcurrente.ejemplo22;
 
 public class Taza {
 

@@ -1,4 +1,4 @@
-package u2.ejemplo24;
+package pconcurrente.ejemplo24;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

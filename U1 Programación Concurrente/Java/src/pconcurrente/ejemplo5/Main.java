@@ -1,4 +1,4 @@
-package u2.ejemplo5;
+package pconcurrente.ejemplo5;
 
 public class Main {
 

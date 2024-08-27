@@ -1,4 +1,4 @@
-package u2.ejemplo18;
+package pconcurrente.ejemplo18;
 
 public class Cuenta {
 

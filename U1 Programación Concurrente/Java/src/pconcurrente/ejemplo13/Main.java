@@ -1,4 +1,4 @@
-package u2.ejemplo13;
+package pconcurrente.ejemplo13;
 
 import java.util.Scanner;
 

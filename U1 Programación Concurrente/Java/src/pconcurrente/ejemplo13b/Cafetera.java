@@ -1,4 +1,4 @@
-package u2.ejemplo13b;
+package pconcurrente.ejemplo13b;
 
 public class Cafetera implements Runnable {
 

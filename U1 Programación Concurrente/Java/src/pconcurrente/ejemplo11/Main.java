@@ -1,4 +1,4 @@
-package u2.ejemplo11;
+package pconcurrente.ejemplo11;
 
 import java.util.Random;
 

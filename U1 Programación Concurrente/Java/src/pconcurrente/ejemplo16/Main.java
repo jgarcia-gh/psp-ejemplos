@@ -1,4 +1,4 @@
-package u2.ejemplo16;
+package pconcurrente.ejemplo16;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package u2.ejemplo17;
+package pconcurrente.ejemplo17;
 
 public class Main {
     public static int contador = 0;

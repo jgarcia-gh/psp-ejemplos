@@ -1,4 +1,4 @@
-package u2.ejemplo19;
+package pconcurrente.ejemplo19;
 
 public class HiloReintegro implements Runnable {
 

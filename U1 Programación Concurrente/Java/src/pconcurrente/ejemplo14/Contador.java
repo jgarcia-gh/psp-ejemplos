@@ -1,4 +1,4 @@
-package u2.ejemplo14;
+package pconcurrente.ejemplo14;
 
 public class Contador implements Runnable{
 
