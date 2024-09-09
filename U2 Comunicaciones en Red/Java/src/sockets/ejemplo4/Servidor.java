@@ -6,6 +6,10 @@ import java.net.Socket;
 
 public class Servidor {
 
+    public static String ruta = "./Archivos/Servidor/";
+    public static String fichero = "ArchivoServidor.jpg";
+    public static String rutaFichero = ruta + fichero;
+
     public static void main(String[] args) {
 
         System.out.println("---SERVIDOR---");
@@ -19,12 +23,23 @@ public class Servidor {
                 System.out.println("¡Cliente conectado!");
 
                 // Obtenemos los flujos de entrada de fichero y salida del socket
-                try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(conexionCliente.getOutputStream());) {
+                try (DataOutputStream dataOutputStream = new DataOutputStream(conexionCliente.getOutputStream());
+                     FileInputStream fileInputStream = new FileInputStream(rutaFichero)) {
 
-                    // Creamos un objeto de tipo Perro y lo enviamos
-                    Perro p = new Perro("Juanjo", 10);
-                    objectOutputStream.writeObject(p);
-                    System.out.println("Objeto enviado al cliente");
+                    // En primer lugar enviamos al cliente el nombre del archivo que le vamos a enviar
+                    dataOutputStream.writeUTF(fichero);
+                    // A continuación, enviamos el tamaño del archivo
+                    File file = new File(rutaFichero);
+                    dataOutputStream.writeLong(file.length());
+                    // Por último, enviamos el archivo
+                    System.out.println("Enviando archivo " + fichero + " " + file.length() + " bytes");
+                    byte[] buffer = new byte[4096]; // Buffer de 4KB
+                    int bytesLeidos;
+                    while ((bytesLeidos = fileInputStream.read(buffer)) != -1) {
+                        dataOutputStream.write(buffer, 0, bytesLeidos);
+                    }
+                    dataOutputStream.flush();
+                    System.out.println("Fichero enviado.");
                 }
             }
         } catch (IOException e) {

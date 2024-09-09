@@ -1,12 +1,11 @@
 package sockets.ejemplo4;
 
-import java.io.DataInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.net.Socket;
 
 public class Cliente {
+
+    public static String ruta = "./Archivos/Cliente/";
 
     public static void main(String[] args) {
 
@@ -14,13 +13,31 @@ public class Cliente {
 
         // Conectamos con el servidor y creamos flujo de entrada del socket
         try (Socket cliente = new Socket("localhost", 1234);
-             ObjectInputStream objectInputStream = new ObjectInputStream(cliente.getInputStream());) {
+             DataInputStream dataInputStream = new DataInputStream(cliente.getInputStream());) {
 
-            // Recibimos el objeto
-            Perro p = (Perro) objectInputStream.readObject();
-            System.out.println("Objeto recibido: " + p);
+            // Recibimos el nombre del archivo
+            String nombreArchivo = dataInputStream.readUTF();
+            // Recibimos tamaño del archivo
+            long tamañoArchivo = dataInputStream.readLong();
+            // Recibimos el archivo
+            System.out.println("Recibiendo archivo " + nombreArchivo + " " + tamañoArchivo + " bytes");
 
-        } catch (IOException | ClassNotFoundException e) {
+            try (FileOutputStream fileOutputStream = new FileOutputStream("./Archivos/Cliente/" + nombreArchivo)) {
+                byte[] buffer = new byte[4096]; // Buffer de 4KB
+                int bytesLeidos;
+                int bytesTotales = 0;
+
+                // Leemos del flujo de entrada si el número total de bytes es inferior a la cantidad de bytes esperados
+                while (bytesTotales < tamañoArchivo && (bytesLeidos = dataInputStream.read(buffer)) != -1) {
+                    fileOutputStream.write(buffer, 0, bytesLeidos);
+                    bytesTotales+= bytesLeidos;
+                }
+
+                fileOutputStream.flush();
+                System.out.println("Archivo recibido");
+            }
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

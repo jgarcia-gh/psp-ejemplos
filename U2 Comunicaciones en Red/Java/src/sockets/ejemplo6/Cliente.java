@@ -1,7 +1,8 @@
-package sockets.ejemplo2;
+package sockets.ejemplo6;
 
 import java.io.*;
 import java.net.Socket;
+import com.google.gson.Gson;
 
 public class Cliente {
     public static void main(String[] args) {
@@ -20,13 +21,12 @@ public class Cliente {
              PrintWriter printWriter = new PrintWriter(outputStream, true);) {
 
             // Recibimos datos del servidor
-            System.out.println("Espero el saludo del servidor...");
+            System.out.println("Esperando datos del servidor...");
             String lineaRecibida = bufferedReader.readLine();
             System.out.println("El mensaje recibido es: " + lineaRecibida);
-
-            // Enviamos datos al servidor
-            System.out.println("Envío información al servidor...");
-            printWriter.println("¡Hola! Soy el cliente.");
+            Gson gson = new Gson();
+            Perro p = gson.fromJson(lineaRecibida, Perro.class);
+            System.out.println("JSON recibido y convertido a objeto: " + p);
 
         } catch (IOException e) {
             e.printStackTrace();
