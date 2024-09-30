@@ -2,6 +2,10 @@ package pconcurrente.ejemplo12;
 
 import java.util.Random;
 
+/*
+La mejor solución para esperar la finalización de un hilo es llamar al método join del hilo al que queremos esperar.
+Esto hace que el hilo que invoque al método join se suspenda hasta que el hilo finalice.
+ */
 public class Main {
     public static void main(String[] args) throws InterruptedException{
         // Lanzamos un hilo que cuenta de 0 a 9

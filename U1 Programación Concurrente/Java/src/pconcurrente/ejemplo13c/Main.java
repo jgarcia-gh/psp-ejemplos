@@ -2,6 +2,12 @@ package pconcurrente.ejemplo13c;
 
 import java.util.Scanner;
 
+/*
+Otro modo es enviando una interrupción mediante el método interrupt de la clase Thread.
+Si el hilo se encuentra en una operación de sleep, join o wait, lanzará una excepción (Interrupted Exception)
+que hará que la cafetera salga del bucle while, y así finalizará el hilo.
+Si no se lanza la excepción, será la condición del bucle while la que detectará que se ha producido la interrupción.
+ */
 public class Main {
 
     public static void main(String[] args) {

@@ -2,6 +2,10 @@ package pconcurrente.ejemplo13b;
 
 import java.util.Scanner;
 
+/*
+Una de las formas de dener un hilo es mediante un flag. Un flag no deja de ser un booleano que indica si el
+hilo debe seguir ejecutándose o no.
+ */
 public class Main {
 
     public static void main(String[] args) {

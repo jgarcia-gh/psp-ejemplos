@@ -1,7 +1,5 @@
 package pconcurrente.ejemplo23b;
 
-import com.sun.org.apache.xpath.internal.objects.XObject;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

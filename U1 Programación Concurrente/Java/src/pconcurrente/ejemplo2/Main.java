@@ -1,5 +1,9 @@
 package pconcurrente.ejemplo2;
 
+/*
+En este ejemplo podemos ver dos métodos, cada uno de ellos tarda 6 segundos en ejecutarse, por lo que
+el programa, en total tardará unos 12 segundos en ejecutarse.
+ */
 public class Main {
     public static void main(String[] args) {
         try{

@@ -1,5 +1,12 @@
 package pconcurrente.ejemplo3;
 
+
+/*
+Es importante saber cuándo debemos lanzar el hilo. En este ejemplo podemos ver que, si lanzamos el hilo
+después de ejecutar el método PrepararTostadas, el programa tardará igualmente 12 segundos en ejecutarse.
+En la práctica es como si hicieramos una ejecución secuencial, como en el ejemplo 2, y no estaríamos
+aprovechando el beneficio de utilizar hilos.
+ */
 public class Main2 {
     public static void main(String[] args) {
 

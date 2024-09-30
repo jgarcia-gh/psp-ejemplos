@@ -1,5 +1,9 @@
 package pconcurrente.ejemplo17b;
 
+/*
+Este ejemplo sirve para demostrar que la variable contador no podría ser local, ya que desde una expresión lambda (ni una clase anónima)
+podemos modificar variables locales.
+ */
 public class Main {
     public static void main(String[] args) {
         int contador = 0;

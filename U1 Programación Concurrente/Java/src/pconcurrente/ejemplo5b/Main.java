@@ -1,5 +1,9 @@
 package pconcurrente.ejemplo5b;
 
+/*
+Pequeña variación sobre el ejemplo 5. En este caso la clase anónima se instancia directamente dentro del constructor
+de la clase Thread.
+ */
 public class Main {
 
     public static void miRun(){

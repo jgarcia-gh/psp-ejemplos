@@ -1,5 +1,8 @@
 package pconcurrente.ejemplo5;
 
+/*
+Este ejemplo es equivalente al ejemplo 4, pero haciendo uso de una clase anónima.
+ */
 public class Main {
 
     public static void main(String[] args) {

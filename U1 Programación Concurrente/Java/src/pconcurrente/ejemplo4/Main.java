@@ -1,5 +1,8 @@
 package pconcurrente.ejemplo4;
 
+/*
+Este ejemplo es equivalente al ejemplo 3, pero en este caso la clase Cafetera implementa la interfaz Runnable.
+ */
 public class Main {
 
     public static void main(String[] args) {

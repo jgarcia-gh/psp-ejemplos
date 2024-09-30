@@ -2,6 +2,10 @@ package pconcurrente.ejemplo11;
 
 import java.util.Random;
 
+/*
+¿Cómo podríamos esperar la finalización de un hilo? Este ejemplo muestra una posible solución.
+El hilo main hace esperas de 1000 ms mientras el hilo esté vivo. Esta solución no es eficiente.
+ */
 public class Main {
     public static void main(String[] args) throws InterruptedException{
         // Lanzamos un hilo que cuenta de 0 a 9

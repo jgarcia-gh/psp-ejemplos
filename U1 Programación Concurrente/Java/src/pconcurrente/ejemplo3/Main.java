@@ -1,5 +1,11 @@
 package pconcurrente.ejemplo3;
 
+
+/*
+En este ejemplo vemos cómo podemos reducir el tiempo de ejecución haciendo uso de hilos.
+El código que antes se ejecutaba en el método PrepararCafe, ahora se ejecuta en un hilo.
+Para ello tenemos la clase Cafetera que hereda de la clase Thread.
+ */
 public class Main {
 
     public static void main(String[] args) {

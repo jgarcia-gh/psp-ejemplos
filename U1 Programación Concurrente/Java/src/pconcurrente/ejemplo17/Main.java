@@ -1,5 +1,9 @@
 package pconcurrente.ejemplo17;
 
+/*
+Ejemplo con expresión lambda, en el que sí existe variable compartida.
+ */
+
 public class Main {
     public static int contador = 0;
     public static void main(String[] args) {

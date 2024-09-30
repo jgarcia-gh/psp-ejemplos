@@ -1,5 +1,8 @@
 package pconcurrente.ejemplo9;
 
+/*
+En este ejemplo podemos ver cómo, desde el hilo principal, podemos mostrar información del hilo t.
+ */
 public class Main {
     public static void main(String[] args) {
         // Lanzamos un hilo que saluda 5 veces

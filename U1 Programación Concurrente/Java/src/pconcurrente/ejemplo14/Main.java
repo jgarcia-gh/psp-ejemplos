@@ -1,5 +1,8 @@
 package pconcurrente.ejemplo14;
 
+/*
+Ejemplo en el que no existe problemas de memoria compartida ya que cada hilo tiene su propio objeto Contador.
+ */
 public class Main {
     public static void main(String[] args) {
         // Lanzamos 5 hilos contador

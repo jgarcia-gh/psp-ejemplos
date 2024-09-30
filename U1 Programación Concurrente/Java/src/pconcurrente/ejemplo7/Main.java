@@ -1,10 +1,10 @@
 package pconcurrente.ejemplo7;
 
+/*
+Este ejemplo es equivalente al ejemplo 4, pero haciendo uso expresiones lambda.
+ */
+
 public class Main {
-
-    public static void miRun(){
-
-    }
 
     public static void main(String[] args) {
 

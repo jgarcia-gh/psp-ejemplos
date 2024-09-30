@@ -2,6 +2,11 @@ package pconcurrente.ejemplo13d;
 
 import java.util.Scanner;
 
+/*
+Este ejemplo sirve para demostrar que hay que conocer bien cómo funcionan las interrupciones en Java.
+Un pequeño cambio en el código de la Cafetera como el que se puede ver en este ejemplo, hará que si se produce una interrupción,
+aunque se lance la excepción InterruptedException, la cafetera no saldrá del bucle while y continuará su ejecución.
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -18,12 +23,10 @@ public class Main {
         t.interrupt();
 
         // La finalización no es instantánea, así que esperamos a que realmente finalice
-        while (t.isAlive()) {
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         System.out.printf("Total: %d cafés", c.getContador());
