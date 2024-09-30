@@ -1,5 +1,8 @@
 package pconcurrente.ejemplo20;
 
+/*
+En este ejemplo se soluciona el problema de concurrencia haciendo uso de bloques sincronizados.
+ */
 public class Main {
 
 	public static void main(String[] args) {

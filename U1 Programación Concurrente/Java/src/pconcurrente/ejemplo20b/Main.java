@@ -1,5 +1,10 @@
 package pconcurrente.ejemplo20b;
 
+/*
+Modificación del ejemplo 20 para demostrar que, como monitor, podemos utilizar cualquier objeto.
+En este caso se crea una instancia de la clase Object. Lo importante es que dicho objeto sea
+compartido entre los diferentes hilos para poder ser utilizado en un bloque sincronizado.
+ */
 public class Main {
 
 	public static void main(String[] args) {

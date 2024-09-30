@@ -4,6 +4,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/*
+El ScheduledThreadPool permite ejecutar tareas aplicando un retraso a su inicio.
+ */
 public class Main {
 
     public static int contadorHilos = 0;

@@ -1,5 +1,8 @@
 package pconcurrente.ejemplo19;
 
+/*
+En este ejemplo se soluciona el problema de condición de carrera aplicando métodos sincronizados en el objeto compartido (Cuenta)
+ */
 public class Main {
 
 	public static void main(String[] args) {
