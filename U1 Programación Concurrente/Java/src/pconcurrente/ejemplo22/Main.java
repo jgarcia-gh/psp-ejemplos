@@ -1,5 +1,10 @@
 package pconcurrente.ejemplo22;
 
+/*
+En este ejemplo tenemos dos hilos PrepararCafe y PrepararLeche que comparten un objeto de tipo Taza.
+Mediante bloques sincronizados y llamadas a los métodos wait y notify, los dos hilos se coordinan para
+servir un café con leche.
+ */
 public class Main {
     public static void main(String[] args) {
 

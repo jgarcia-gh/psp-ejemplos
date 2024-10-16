@@ -1,5 +1,9 @@
 package pconcurrente.ejemplo21;
 
+/*
+En este ejemplo se introduce el uso de notify y wait, de forma que HiloIngreso notifica a HiloReintegro cuando se ingresa dinero.
+HiloReintegro ejecuta el método wait cuando no hay suficiente saldo para realizar el reintegro.
+ */
 public class Main {
 
 	public static void main(String[] args) {

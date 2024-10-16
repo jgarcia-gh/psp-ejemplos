@@ -2,7 +2,11 @@ package pconcurrente.ejemplo23b;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
+/*
+Caso similar al del ejemplo 23 pero utilizando una expresión lambda.
+En este caso se produce un problema ya que todos los hilos acceden y modifican el mismo atributo estático contadorHilos
+Es decir, se trata de una variable compartida. Para evitar problemas es necesario utilizar un bloque sincronizado.
+ */
 public class Main {
 
     public static int contadorHilos = 0;

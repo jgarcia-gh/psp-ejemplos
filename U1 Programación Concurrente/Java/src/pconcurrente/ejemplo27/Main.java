@@ -3,7 +3,10 @@ package pconcurrente.ejemplo27;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
+/*
+Mediante ScheduledThreadPool también podemos hacer que ciertas tareas se ejecuten periódicamente.
+En este caso, la tarea Contador se ejecuta cada 2 segundos.
+ */
 public class Main {
     public static void main(String[] args) {
 

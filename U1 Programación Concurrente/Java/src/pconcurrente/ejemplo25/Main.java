@@ -4,6 +4,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
+/*
+El uso de CachedThreadPool permite crear un pool de threads reutilizables. El thread pool creará nuevos hilos si es
+necesario, intentando reutilizar los existentes cuando sea posible.
+Si hay hilos sin utilizar se eliminan al cabo de un tiempo.
+ */
 public class Main {
 
     public static int contadorHilos = 0;

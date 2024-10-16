@@ -1,5 +1,11 @@
 package pconcurrente.ejemplo18;
 
+/*
+Este ejemplo sirve para demostrar los problemas que supone utilizar variables compartidas.
+En este caso, existe una instancia de la clase Cuenta compartida entre dos hilos.
+Cada hilo realiza 1000 ingresos y 1000 reintegros de 100 euros cada uno. El saldo final de la cuenta debería ser 0 euros,
+pero tras varias ejecuciones podemos ver que cada vez arroja un resultado diferente.
+ */
 public class Main {
 
 	public static void main(String[] args) {
