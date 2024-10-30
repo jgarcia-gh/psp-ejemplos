@@ -1,8 +1,6 @@
 package sockets.ejemplo6;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -21,8 +19,7 @@ public class Servidor {
                 System.out.println("¡Cliente conectado!");
 
                 // Obtener los flujos de entrada y salida usando try-with-resources
-                try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conexionCliente.getInputStream()));
-                     PrintWriter printWriter = new PrintWriter(conexionCliente.getOutputStream(), true)) {
+                try (PrintWriter printWriter = new PrintWriter(conexionCliente.getOutputStream(), true)) {
 
                     // Enviar datos al cliente
                     System.out.println("Envío información al cliente...");

@@ -14,11 +14,8 @@ public class Cliente {
 
              // Obtenemos los flujos de entrada y salida
              InputStream inputStream = cliente.getInputStream();
-             OutputStream outputStream = cliente.getOutputStream();
-
              // Obtenemos los flujos de datos
-             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-             PrintWriter printWriter = new PrintWriter(outputStream, true);) {
+             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
 
             // Recibimos datos del servidor
             System.out.println("Esperando datos del servidor...");

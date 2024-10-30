@@ -1,7 +1,6 @@
 package sockets.ejemplo5;
 
 import java.io.Serializable;
-
 public class Perro implements Serializable {
     private String nombre;
     private int edad;
