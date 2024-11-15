@@ -22,7 +22,7 @@ public class Servidor {
                 try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(conexionCliente.getOutputStream());) {
 
                     // Creamos un objeto de tipo Perro y lo enviamos
-                    Perro p = new Perro("Juanjo", 10);
+                    Perro p = new Perro("Rufo", 10);
                     objectOutputStream.writeObject(p);
                     System.out.println("Objeto enviado al cliente");
                 }
