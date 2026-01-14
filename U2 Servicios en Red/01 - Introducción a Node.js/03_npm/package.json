@@ -1,0 +1,14 @@
+{
+  "name": "03_npm",
+  "version": "1.0.0",
+  "description": "Probando NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jesús García",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
