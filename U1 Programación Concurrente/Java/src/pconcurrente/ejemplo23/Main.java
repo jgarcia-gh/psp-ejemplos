@@ -1,26 +1,35 @@
 package pconcurrente.ejemplo23;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-/*
-Creación de un Thread Pool de tamaño fijo 2. Podemos ver que, aunque queramos lanzar 10 contadores,
-solo se ejecutarán de 2 en 2.
-El atributo estático se utiliza para contabilizar los hilos creados y asignar el número a cada hilo.
- */
 public class Main {
+    private static final Object recursoA = new Object();
+    private static final Object recursoB = new Object();
 
-    public static int contadorHilos = 0;
     public static void main(String[] args) {
+        new Thread(Main::metodoHilo1).start();
+        new Thread(Main::metodoHilo2).start();
+    }
 
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+    public static void metodoHilo1() {
+        synchronized (recursoA) {
+            System.out.println("Hilo 1: Bloqueó Recurso A");
 
-        for(int i = 1; i <= 10; i++){
-            Contador c = new Contador(contadorHilos);
-            executor.execute(c);
-            contadorHilos++;
+            // Un pequeño delay para asegurar que el Hilo 2 bloquee el Recurso B
+            try { Thread.sleep(50); } catch (InterruptedException e) {}
+
+            synchronized (recursoB) {
+                System.out.println("Hilo 1: Bloqueó Recurso B");
+            }
         }
+    }
+    public static void metodoHilo2() {
+        synchronized (recursoB) { // <-- ¡Aquí está el peligro! Orden invertido
+            System.out.println("Hilo 2: Bloqueó Recurso B");
 
-        executor.shutdown();
+            try { Thread.sleep(50); } catch (InterruptedException e) {}
+
+            synchronized (recursoA) {
+                System.out.println("Hilo 2: Bloqueó Recurso A");
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-package pconcurrente.ejemplo24;
+package pconcurrente.ejemplo24b;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {

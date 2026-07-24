@@ -1,66 +1,13 @@
 package pconcurrente.ejemplo25;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-
-/*
-El uso de CachedThreadPool permite crear un pool de threads reutilizables. El thread pool creará nuevos hilos si es
-necesario, intentando reutilizar los existentes cuando sea posible.
-Si hay hilos sin utilizar se eliminan al cabo de un tiempo.
- */
 public class Main {
 
-    public static int contadorHilos = 0;
     public static void main(String[] args) {
-
-        ExecutorService executor = Executors.newCachedThreadPool();
-        ThreadPoolExecutor pool = (ThreadPoolExecutor) executor;
-
-        System.out.println("Hilos en el pool: " + pool.getPoolSize() +
-                           " Hilos activos: " + pool.getActiveCount());
-
-        System.out.println("Lanzamos hilo 0 y 1");
-        Contador c = new Contador(contadorHilos);
-        executor.execute(c);
-        contadorHilos++;
-        c = new Contador(contadorHilos);
-        executor.execute(c);
-        contadorHilos++;
-        System.out.println("Hilos en el pool: " + pool.getPoolSize() +
-                           " Hilos activos: " + pool.getActiveCount());
-
-        System.out.println("Esperamos 1 segundo");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Hilos en el pool: " + pool.getPoolSize() +
-                " Hilos activos: " + pool.getActiveCount());
-
-        System.out.println("Lanzamos hilo 2");
-        c = new Contador(contadorHilos);
-        contadorHilos++;
-        executor.execute(c);
-        System.out.println("Hilos en el pool: " + pool.getPoolSize() +
-                           " Hilos activos: " + pool.getActiveCount());
-
-        System.out.println("Esperamos 70 segundos");
-        try {
-            Thread.sleep(70000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Hilos en el pool: " + pool.getPoolSize() +
-                           " Hilos activos: " + pool.getActiveCount());
-
-        System.out.println("Lanzamos hilo 3");
-        c = new Contador(contadorHilos);
-        executor.execute(c);
-        System.out.println("Hilos en el pool: " + pool.getPoolSize() +
-                           " Hilos activos: " + pool.getActiveCount());
-
-        executor.shutdown();
+        Contador c = new Contador();
+        new Thread(()->{
+            for(int i = 0; i < 100; i++){
+                c.incrementar();
+            }
+        }).start();
     }
 }

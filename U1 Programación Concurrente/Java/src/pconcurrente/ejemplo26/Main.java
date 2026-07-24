@@ -1,27 +1,31 @@
 package pconcurrente.ejemplo26;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-/*
-El ScheduledThreadPool permite ejecutar tareas aplicando un retraso a su inicio.
- */
 public class Main {
+    public static void main(String[] args) throws InterruptedException {
+        Piscina piscina = new Piscina();
 
-    public static int contadorHilos = 0;
-
-    public static void main(String[] args) {
-
-        ScheduledExecutorService ses = Executors.newScheduledThreadPool(2);
-
-        System.out.println("Código antes de lanzar las tareas");
-        for(int i = 1; i <= 10; i++){
-            Contador c = new Contador(contadorHilos);
-            ses.schedule(c, 5, TimeUnit.SECONDS);
-            contadorHilos++;
+        // Empezamos en turno de natación (por defecto turnoDeSaltos = false)
+        Thread[] nadadores = new Thread[3];
+        for (int i = 0; i < nadadores.length; i++) {
+            nadadores[i] = new Thread(new Nadador(piscina, "Nadador-" + i));
         }
-        System.out.println("Código después de lanzar las tareas");
-        ses.shutdown();
+
+        Thread[] saltadores = new Thread[3];
+        for (int i = 0; i < saltadores.length; i++) {
+            saltadores[i] = new Thread(new Saltador(piscina, "Saltador-" + i));
+        }
+
+        // El socorrista cambiará de turno 4 veces, cada 1 segundo
+        Thread socorrista = new Thread(new Socorrista(piscina, 4, 1000));
+
+        for (Thread t : nadadores) t.start();
+        for (Thread t : saltadores) t.start();
+        socorrista.start();
+
+        for (Thread t : nadadores) t.join();
+        for (Thread t : saltadores) t.join();
+        socorrista.join();
+
+        System.out.println("Fin de la jornada en la piscina.");
     }
 }

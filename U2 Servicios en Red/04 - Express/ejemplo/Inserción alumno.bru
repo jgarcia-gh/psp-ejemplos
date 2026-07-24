@@ -1,0 +1,30 @@
+meta {
+  name: Inserción alumno
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/alumnos
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Sonia Martínez",
+    "email": "sonia@instituto.es",
+    "matriculas": [
+      {
+        "asignatura": "6972a97cec1c936319ebe3dd",
+        "nota": 6.5,
+        "convocatoria": "ordinaria"
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
