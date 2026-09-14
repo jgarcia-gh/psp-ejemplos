@@ -3,23 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo28", "ejemplo28\ejemplo28.csproj", "{9839DA82-3C2F-44CD-B673-4A5CA788EC9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo32", "ejemplo28\ejemplo32.csproj", "{9839DA82-3C2F-44CD-B673-4A5CA788EC9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo29b", "ejemplo29b\ejemplo29b.csproj", "{001B1049-F29E-4E76-94C3-314DC9750FBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo33b", "ejemplo29b\ejemplo33b.csproj", "{001B1049-F29E-4E76-94C3-314DC9750FBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo33", "ejemplo33\ejemplo33.csproj", "{2675E1BD-CDBA-423A-8763-356C0397353C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo37", "ejemplo33\ejemplo37.csproj", "{2675E1BD-CDBA-423A-8763-356C0397353C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo32", "ejemplo32\ejemplo32.csproj", "{F2D9C7AA-C9D2-4983-8BAB-29FB61B7AE7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo36", "ejemplo32\ejemplo36.csproj", "{F2D9C7AA-C9D2-4983-8BAB-29FB61B7AE7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo28b", "ejemplo28b\ejemplo28b.csproj", "{545E726C-6A00-4114-BA5E-9B1C12CE3963}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo32b", "ejemplo28b\ejemplo32b.csproj", "{545E726C-6A00-4114-BA5E-9B1C12CE3963}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo29", "ejemplo29\ejemplo29.csproj", "{6BFC7213-66B3-4DF6-8FF2-A74F60E0FBF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo33", "ejemplo29\ejemplo33.csproj", "{6BFC7213-66B3-4DF6-8FF2-A74F60E0FBF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo30", "ejemplo30\ejemplo30.csproj", "{3313EA84-93E1-4131-8241-AD4622F2855E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo34", "ejemplo30\ejemplo34.csproj", "{3313EA84-93E1-4131-8241-AD4622F2855E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo31", "ejemplo31\ejemplo31.csproj", "{05FA28BA-8F0B-4E84-A5AF-501963A8E436}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo35", "ejemplo31\ejemplo35.csproj", "{05FA28BA-8F0B-4E84-A5AF-501963A8E436}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo31b", "ejemplo31b\ejemplo31b.csproj", "{D1E73A6C-8B76-4CDA-9701-09CB86857171}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejemplo35b", "ejemplo31b\ejemplo35b.csproj", "{D1E73A6C-8B76-4CDA-9701-09CB86857171}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

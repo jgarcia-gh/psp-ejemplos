@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ejemplo29
+namespace ejemplo32b
 {
     class Program
     {
