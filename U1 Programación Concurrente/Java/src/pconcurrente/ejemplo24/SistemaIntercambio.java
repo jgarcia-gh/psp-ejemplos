@@ -4,12 +4,6 @@ public class SistemaIntercambio {
 
     public void intercambiarObjetos(InventarioJugador inventarioOrigen, InventarioJugador inventarioDestino) {
 
-        if(inventarioOrigen.getID() > inventarioDestino.getID()){
-            InventarioJugador aux = inventarioOrigen;
-            inventarioOrigen = inventarioDestino;
-            inventarioDestino = aux;
-        }
-
         System.out.println(Thread.currentThread().getName()
                 + " intenta bloquear el inventario de " + inventarioOrigen.getNombreJugador());
 
