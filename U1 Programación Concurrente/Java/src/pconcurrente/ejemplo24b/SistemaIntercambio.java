@@ -4,16 +4,18 @@ public class SistemaIntercambio {
 
     public void intercambiarObjetos(InventarioJugador inventarioOrigen, InventarioJugador inventarioDestino) {
 
-        if(inventarioOrigen.getID() < inventarioDestino.getID()){
-            InventarioJugador aux = inventarioOrigen;
+        InventarioJugador aux;
+
+        if(inventarioOrigen.getID() > inventarioDestino.getID()){
+            aux = inventarioOrigen;
             inventarioOrigen = inventarioDestino;
             inventarioDestino = aux;
         }
 
         System.out.println(Thread.currentThread().getName()
                 + " intenta bloquear el inventario de " + inventarioOrigen.getNombreJugador());
-        inventarioOrigen.getLock().lock();
-        try {
+        synchronized (inventarioOrigen){
+
             System.out.println(Thread.currentThread().getName()
                     + " ha bloqueado el inventario de " + inventarioOrigen.getNombreJugador());
 
@@ -26,8 +28,8 @@ public class SistemaIntercambio {
 
             System.out.println(Thread.currentThread().getName()
                     + " intenta bloquear el inventario de " + inventarioDestino.getNombreJugador());
-            inventarioDestino.getLock().lock();
-            try {
+
+            synchronized (inventarioDestino) {
                 System.out.println(Thread.currentThread().getName()
                         + " ha bloqueado el inventario de " + inventarioDestino.getNombreJugador());
 
@@ -37,11 +39,7 @@ public class SistemaIntercambio {
                 System.out.println(Thread.currentThread().getName() + " ha completado el intercambio: "
                         + inventarioOrigen.getNombreJugador() + " -> " + inventarioDestino.getNombreJugador());
 
-            } finally {
-                inventarioDestino.getLock().unlock();
             }
-        } finally {
-            inventarioOrigen.getLock().unlock();
         }
     }
 }
